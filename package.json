@@ -1,0 +1,11 @@
+{
+  "name": "micopay-issuer-os",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build -w apps/web",
+    "dev": "npm run dev -w apps/web"
+  }
+}
