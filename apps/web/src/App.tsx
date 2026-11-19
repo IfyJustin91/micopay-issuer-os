@@ -3,6 +3,7 @@ import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import { Titulo } from './comun';
 import { emisor } from './ejemplos/emisor';
 import { lang, setLang, t } from './i18n';
+import { useSim } from './sim/SimProvider';
 import { Icon } from './ui';
 import Tablero from './pages/Tablero';
 import Operaciones from './pages/Operaciones';
@@ -47,6 +48,17 @@ function AvisoPrototipo() {
   );
 }
 
+/** Back to the initial scenario. Asks first: everything done in the mock-up is lost. */
+function Reiniciar() {
+  const { reiniciar } = useSim();
+  return (
+    <button type="button" onClick={() => { if (window.confirm(t('¿Volver al escenario inicial? Se pierde todo lo que hiciste en la maqueta.'))) reiniciar(); }}
+      className="flex min-h-12 shrink-0 items-center gap-3 px-5 py-3 text-[15px] font-bold whitespace-nowrap text-gris-3 md:mt-auto md:border-t-2 md:border-tinta-3">
+      <Icon name="history_toggle_off" /> {t('Reiniciar escenario')}
+    </button>
+  );
+}
+
 function Encabezado() {
   const a = emisor.activo;
   const campos: Array<[string, string]> = [
@@ -84,7 +96,8 @@ function Layout({ children }: { children: ReactNode }) {
             </NavLink>
           ))}
         </nav>
-        <div className="hidden md:flex mt-auto px-5 py-4 border-t-2 border-tinta-3 gap-2" role="group" aria-label="Language">
+        <Reiniciar />
+        <div className="hidden md:flex px-5 py-4 border-t-2 border-tinta-3 gap-2" role="group" aria-label="Language">
           {(['es', 'en'] as const).map((l) => (
             <button key={l} type="button" onClick={() => setLang(l)} aria-pressed={lang === l}
               className={`min-h-12 rounded-sm border-2 px-3 py-1 text-[13px] font-bold uppercase ${lang === l ? 'bg-papel text-tinta border-papel' : 'border-tinta-3 text-gris-3'}`}>{l}</button>

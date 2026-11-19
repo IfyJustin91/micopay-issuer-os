@@ -6,7 +6,7 @@ export default function Tablero() {
   return (
     <>
       <Titulo cintillo={t('Emisor')}>{t('Tablero')}</Titulo>
-      <VistaPendiente issue="IOS-1" archivo="src/ejemplos/tablero.ts" />
+      <VistaPendiente issue="IOS-1" archivo="src/sim/" />
     </>
   );
 }

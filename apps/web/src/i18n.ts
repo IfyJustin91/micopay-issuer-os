@@ -46,7 +46,11 @@ const EN: Record<string, string> = {
     'Nothing on this screen is real: not the issuer, the asset, the reserves or the operations. Figures and rules are example assumptions, not product policies. MicoPay does not issue or hold this asset.',
   // placeholders
   'Vista pendiente': 'View pending',
-  'Esta vista se construye en {issue}. Los datos de ejemplo ya están en {archivo}.': 'This view is built in {issue}. The example data is already in {archivo}.',
+  'Esta vista se construye en {issue}. El estado y las acciones del simulador ya están en {archivo}.': 'This view is built in {issue}. The simulator state and actions are already in {archivo}.',
+  'Reiniciar escenario': 'Reset scenario',
+  '¿Volver al escenario inicial? Se pierde todo lo que hiciste en la maqueta.': 'Go back to the initial scenario? Everything you did in the mock-up is lost.',
+  'Redención con SPEI': 'Redemption via SPEI',
+  'Pendiente de fondos': 'Pending funds',
   'Detalle de operación': 'Operation detail',
   'Operación {id}': 'Operation {id}',
   'No existe una operación {id} en el ejemplo.': 'There is no operation {id} in the example.',
@@ -59,7 +63,6 @@ const EN: Record<string, string> = {
   'Monto': 'Amount',
   // operation types and statuses (example data)
   'Emisión': 'Issuance',
-  'Redención con SPEI': 'Redemption via SPEI',
   'Pago de café': 'Coffee payment',
   'Completa': 'Complete',
   'Incompleta': 'Incomplete',

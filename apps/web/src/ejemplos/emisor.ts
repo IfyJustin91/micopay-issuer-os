@@ -7,8 +7,8 @@
    son a propósito imposibles en Stellar, para que nadie los confunda con una
    cuenta real.
 
-   Cada pantalla tiene su propio archivo de ejemplo con sus propios tipos. No es
-   un esquema compartido ni el modelo de datos del producto (PROJECT.md §18). */
+   El estado que cambia (tokens, reservas, operaciones, discrepancias) vive en
+   el simulador, src/sim/. */
 
 export interface EmisorEjemplo {
   nombre: string;
