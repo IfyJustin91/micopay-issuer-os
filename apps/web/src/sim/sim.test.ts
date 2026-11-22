@@ -19,7 +19,7 @@ const activa = (e: Estado, id: number) => reglas(e).find((r) => r.id === id)!.ac
 describe('escenario inicial', () => {
   it('cuadra: 110 % de respaldo, 10 % en banco y partidas = saldo', () => {
     const e = escenarioInicial();
-    expect(cobertura(e)).toBeCloseTo(999); // deliberate failure
+    expect(cobertura(e)).toBeCloseTo(1.1);
     expect(coberturaLiquida(e)).toBeCloseTo(0.1);
     expect(sumaPartidasBanco(e)).toBe(e.banco);
     expect(activa(e, 4)).toBe(true);
